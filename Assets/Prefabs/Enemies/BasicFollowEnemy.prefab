@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2197258432335061093}
   - component: {fileID: 7944715195594887230}
   - component: {fileID: 963191614790088937}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BasicFollowEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a0156b9cd5fce965fb0441ffa64c8ffe, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -192,4 +192,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16815ddf1bd10d09ca43f900ac25cc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 10
+  maxHealth: 20

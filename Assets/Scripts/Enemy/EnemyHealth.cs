@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IDespawnNotifier
 
     public event Action<GameObject> OnDestroyRequested;
 
-    void Awake()
+    void OnEnable()
     {
         health = maxHealth;
     }

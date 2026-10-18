@@ -32,13 +32,22 @@ public class AttackSpawner : MonoBehaviour
         }
     }
 
-    public virtual GameObject SpawnAttackInstance()
+    public void SpawnAttackInstance(LayerMask damageLayers, Vector2 pos, Quaternion forward)
     {
         var attack = GetFromPool();
-        attack.transform.position = Vector2.zero;
+        attack.transform.SetPositionAndRotation(pos, forward);
+
+        if (attack.TryGetComponent<IDamagesLayers>(out var layerDamage))
+        {
+            layerDamage.SetDamageLayers(damageLayers);
+        }
+        else
+        {
+            Assert.IsTrue(false, "Add damage layers!!!!!!!!");
+        }
+
         attack.SetActive(true);
         activeInstances.Add(attack);
-        return attack;    
     }
 
     public void ClearCurrentAttack()
@@ -54,6 +63,10 @@ public class AttackSpawner : MonoBehaviour
             return queue.Dequeue();
 
         GameObject attack = Instantiate(prefab);
+        
+        // so that OnEnable has a chance to run after transform is set
+        attack.SetActive(false); 
+
         prefabLookupTable[attack] = prefab;
         if (!inactiveInstances.ContainsKey(prefab))
             inactiveInstances[prefab] = new();
