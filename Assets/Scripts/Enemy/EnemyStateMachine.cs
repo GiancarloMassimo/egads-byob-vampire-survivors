@@ -36,7 +36,7 @@ public abstract class EnemyStateMachine : MonoBehaviour
     protected virtual void Awake()
     {
         initialState = BuildTransitions();
-        Register(currentState);
+        Register(initialState);
     }
 
     void Start()
@@ -54,11 +54,14 @@ public abstract class EnemyStateMachine : MonoBehaviour
 
         currentState = initialState;
         currentState.Setup();
+
+        OnGetFromPool();
     }
 
     void OnDisable()
     {
         currentState?.Cleanup();
+        OnReturnToPool();
     }
 
     protected virtual void Update()
@@ -152,5 +155,7 @@ public abstract class EnemyStateMachine : MonoBehaviour
         }
     }
 
+    protected abstract void OnGetFromPool();
+    protected abstract void OnReturnToPool();
     protected abstract EnemyState BuildTransitions();
 }
