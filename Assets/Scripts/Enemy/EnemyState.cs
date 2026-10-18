@@ -9,7 +9,7 @@ public abstract class EnemyState
     protected void RaiseExit() => Exit?.Invoke();
 
     bool isInitialized = false;
-    public void Register(GameObject enemy)
+    public void Build(GameObject enemy)
     {
         Assert.IsFalse(isInitialized, "double initialization");
         isInitialized = true;

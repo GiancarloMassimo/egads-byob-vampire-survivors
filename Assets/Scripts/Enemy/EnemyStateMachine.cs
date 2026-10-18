@@ -16,13 +16,17 @@ struct Transition
 }
 
 public abstract class EnemyStateMachine : MonoBehaviour
-{
+{    
+    EnemyState initialState;
     EnemyState currentState;
 
     readonly HashSet<EnemyState> states = new();
     readonly Dictionary<EnemyState, List<Transition>> transitionMap = new();
     readonly List<Transition> anyStatePredicates = new();
  
+    EnemyState pendingExit = null;
+    bool firstInit = true; 
+
     void Register(EnemyState state)
     {
         Assert.IsNotNull(state); 
@@ -31,14 +35,30 @@ public abstract class EnemyStateMachine : MonoBehaviour
 
     protected virtual void Awake()
     {
-        currentState = BuildTransitions();
+        initialState = BuildTransitions();
         Register(currentState);
     }
 
-    protected virtual void Start()
+    void Start()
     {
-        foreach (var state in states) state.Register(gameObject);
+        foreach (var state in states) state.Build(gameObject);
+        currentState = initialState;
         currentState.Setup();
+
+        firstInit = false;
+    }
+
+    void OnEnable()
+    {
+        if (firstInit) return;
+
+        currentState = initialState;
+        currentState.Setup();
+    }
+
+    void OnDisable()
+    {
+        currentState?.Cleanup();
     }
 
     protected virtual void Update()
@@ -59,6 +79,13 @@ public abstract class EnemyStateMachine : MonoBehaviour
 
     EnemyState GetNextState()
     {
+        if (pendingExit != null)
+        {
+            var to = pendingExit;
+            pendingExit = null;
+            return to;
+        }
+
         foreach (var transition in anyStatePredicates)
         {
             if (transition.To != currentState && transition.Predicate()) return transition.To;
@@ -84,11 +111,12 @@ public abstract class EnemyStateMachine : MonoBehaviour
 
     protected void AddTransition(EnemyState to, Func<bool> predicate, params EnemyState[] from)
     {
+        Assert.IsTrue(from.Length > 0);
         Register(to);
 
         foreach (var state in from)
         {
-            Assert.AreNotEqual(to, state, "circular transition detected");
+            Assert.AreNotEqual(to, state, "self transition detected");
             Register(state);
 
             if (!transitionMap.TryGetValue(state, out var transitions))
@@ -113,13 +141,13 @@ public abstract class EnemyStateMachine : MonoBehaviour
 
         foreach (var state in from)
         {
-            Assert.AreNotEqual(to, state, "circular transition detected");
+            Assert.AreNotEqual(to, state, "self transition detected");
             Register(state);
 
             state.Exit += () => 
             {
                 Assert.AreEqual(currentState, state);
-                TransitionTo(to);
+                pendingExit = to;
             };
         }
     }
