@@ -1,6 +1,6 @@
 using System;
-using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 [Serializable]
 public abstract class EnemyState

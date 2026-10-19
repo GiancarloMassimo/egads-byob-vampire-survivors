@@ -64,6 +64,8 @@ public class EnemySpawner : MonoBehaviour
             return queue.Dequeue();
 
         GameObject enemy = Instantiate(prefab);
+        enemy.SetActive(false);
+
         prefabLookupTable[enemy] = prefab;
         if (!inactiveEnemies.ContainsKey(prefab))
             inactiveEnemies[prefab] = new();
@@ -82,7 +84,7 @@ public class EnemySpawner : MonoBehaviour
 
     void ReturnToPool(GameObject enemy)
     {
-        activeEnemies.Remove(enemy);
+        if (!activeEnemies.Remove(enemy)) return; 
         enemy.SetActive(false);
         inactiveEnemies[prefabLookupTable[enemy]].Enqueue(enemy);
     }

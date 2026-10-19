@@ -9,9 +9,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Assert.IsNull(Instance);
         Instance = this;
-
         Player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 }

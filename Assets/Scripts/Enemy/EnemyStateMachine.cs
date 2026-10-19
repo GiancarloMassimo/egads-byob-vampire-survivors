@@ -61,6 +61,7 @@ public abstract class EnemyStateMachine : MonoBehaviour
     void OnDisable()
     {
         currentState?.Cleanup();
+        pendingExit = null;
         OnReturnToPool();
     }
 
@@ -155,7 +156,7 @@ public abstract class EnemyStateMachine : MonoBehaviour
         }
     }
 
-    protected abstract void OnGetFromPool();
-    protected abstract void OnReturnToPool();
+    protected virtual void OnGetFromPool() {}
+    protected virtual void OnReturnToPool() {}
     protected abstract EnemyState BuildTransitions();
 }

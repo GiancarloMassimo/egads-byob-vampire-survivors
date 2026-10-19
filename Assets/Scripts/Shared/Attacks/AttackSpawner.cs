@@ -14,7 +14,7 @@ public struct AttackPoolItem
 
 public class AttackSpawner : MonoBehaviour
 {
-    [SerializeField] EnemyPoolItem[] pool;
+    [SerializeField] AttackPoolItem[] pool;
 
     readonly List<GameObject> prefabPool = new();
     readonly Dictionary<GameObject, Queue<GameObject>> inactiveInstances = new();
@@ -52,9 +52,9 @@ public class AttackSpawner : MonoBehaviour
 
     public void ClearCurrentAttack()
     {
-        foreach (var attack in activeInstances) ReturnToPool(attack);
+        foreach (var attack in new List<GameObject>(activeInstances)) ReturnToPool(attack);
     }
-
+    
     protected GameObject GetFromPool()
     {
         GameObject prefab = prefabPool[Random.Range(0, prefabPool.Count)];
@@ -63,8 +63,6 @@ public class AttackSpawner : MonoBehaviour
             return queue.Dequeue();
 
         GameObject attack = Instantiate(prefab);
-        
-        // so that OnEnable has a chance to run after transform is set
         attack.SetActive(false); 
 
         prefabLookupTable[attack] = prefab;
@@ -85,7 +83,7 @@ public class AttackSpawner : MonoBehaviour
 
     void ReturnToPool(GameObject attack)
     {
-        activeInstances.Remove(attack);
+        if (!activeInstances.Remove(attack)) return; 
         attack.SetActive(false);
         inactiveInstances[prefabLookupTable[attack]].Enqueue(attack);
     }
