@@ -1,17 +1,22 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    private static WaitForSeconds _waitForSeconds3 = new WaitForSeconds(3f);
     [SerializeField] float moveSpeed;
 
     Vector2 moveInput;
 
     Rigidbody2D rb;
 
+    [SerializeField] AudioClip[] voicelines;
+
     void Start()
     {
+        StartCoroutine(Voicelines());
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -33,5 +38,14 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.linearVelocity = moveInput.normalized * moveSpeed;
+    }
+
+    IEnumerator Voicelines()
+    {
+        while (true)
+        {
+            AudioManager.instance.PlayRandomSound(voicelines);
+            yield return _waitForSeconds3;
+        }
     }
 }

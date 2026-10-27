@@ -10,6 +10,8 @@ public class ChargeAttackState : EnemyState
     [SerializeField] float chargeDuration;
     [SerializeField] int chargeDamage;
     [SerializeField] float knockbackForce;
+    
+    [SerializeField] Sprite chargeSprite = null;
 
     Transform target;
     Transform self;
@@ -66,6 +68,7 @@ public class ChargeAttackState : EnemyState
         switch (currentState)
         {
             case ChargeState.Waiting:
+                if (chargeSprite != null) self.GetComponent<SpriteRenderer>().sprite = chargeSprite;
                 currentState = ChargeState.Charging;
                 stateTimer = chargeDuration;
                 break;

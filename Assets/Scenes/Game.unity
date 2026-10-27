@@ -687,6 +687,10 @@ MonoBehaviour:
     prefab: {fileID: 4335020595821830025, guid: 6c866509c9b282dd19593f787fcaa9d2, type: 3}
   - weight: 1
     prefab: {fileID: 4335020595821830025, guid: 15980d5d7b7099dccbbe8cf3433673b7, type: 3}
+  - weight: 1
+    prefab: {fileID: 4335020595821830025, guid: 9885044bd6a0f118ead0c9eb1751e187, type: 3}
+  - weight: 3
+    prefab: {fileID: 4335020595821830025, guid: d11d5079c34fb8fb69a584faad4075ab, type: 3}
   maxEnemies: 100
   enemiesPerWave:
     serializedVersion: 2
@@ -753,6 +757,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   numSources: 32
+--- !u!1 &1004985353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004985354}
+  - component: {fileID: 1004985355}
+  m_Layer: 0
+  m_Name: TeleportAttacks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1004985354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004985353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1115508635}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1004985355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004985353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679989e555ed20e4a92c82b631f585e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
+  key: teleport
+  pool:
+  - weight: 1
+    prefab: {fileID: 6075632139709039314, guid: 789fa54e4576467918d06249fc499335, type: 3}
 --- !u!1 &1115508634
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +836,7 @@ Transform:
   m_Children:
   - {fileID: 1854803897}
   - {fileID: 1638543052}
+  - {fileID: 1004985354}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1286315646
@@ -1189,6 +1242,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 5
+  voicelines:
+  - {fileID: 8300000, guid: b56ccb9d8351bdf2eb0e8aa7a6dea7d8, type: 3}
+  - {fileID: 8300000, guid: 08c6bc2b43dde4543ba6cd87fb9c7922, type: 3}
+  - {fileID: 8300000, guid: 10e01dbc23dc548fbbfa1536f58471ff, type: 3}
+  - {fileID: 8300000, guid: ab0f5fcbb469f0a6680cdc480b53dd1c, type: 3}
+  - {fileID: 8300000, guid: 11d7eb2d3c41514c7b7343e24b7fc660, type: 3}
+  - {fileID: 8300000, guid: d945b1721bfe4cb41b6e4c4ca487475a, type: 3}
+  - {fileID: 8300000, guid: 5cf6638551ab3e4369725f7da43a541d, type: 3}
+  - {fileID: 8300000, guid: 0e6b6ea3bb09cf3158ec94d659f6ae19, type: 3}
+  - {fileID: 8300000, guid: 31e2922bde4a96e09a360576435dd9e6, type: 3}
+  - {fileID: 8300000, guid: 2473f3594c7a236d08fdf9232189b22b, type: 3}
+  - {fileID: 8300000, guid: 23c22ced9acbd8d9787162159fef32fb, type: 3}
+  - {fileID: 8300000, guid: 396ff4077c467d085b3ce21efdd3a514, type: 3}
 --- !u!50 &1443649186
 Rigidbody2D:
   serializedVersion: 5
@@ -1265,11 +1331,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   primaryAttack:
-    ability: {fileID: 1638543053}
-    cooldown: 0.1
+    ability: {fileID: 1004985355}
+    cooldown: 1
     lastUsed: 0
   secondayAttack:
-    ability: {fileID: 1854803898}
+    ability: {fileID: 1638543053}
     cooldown: 0.1
     lastUsed: 0
   damageLayers:
@@ -1339,6 +1405,8 @@ MonoBehaviour:
   pool:
   - weight: 1
     prefab: {fileID: 6935138277788444099, guid: b4578b25b109a55aa80744c525b5fe1d, type: 3}
+  - weight: 1
+    prefab: {fileID: 6935138277788444099, guid: 4712ac0889978b458b89c65ff5f31c26, type: 3}
 --- !u!1 &1854803896
 GameObject:
   m_ObjectHideFlags: 0

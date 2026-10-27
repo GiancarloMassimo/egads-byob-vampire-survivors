@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.XR;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +15,24 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] Slider healthBarSlider;
 
     bool isStunned;
+    bool invul = false;
+
 
     PlayerMovement playerMovement;
     Rigidbody2D rb;
+
+    public void SetInvul(float time)
+    {
+        StartCoroutine(InvulRoutine(time));
+    }
+
+    IEnumerator InvulRoutine(float time)
+    {
+        invul = true;
+        yield return new WaitForSeconds(time);
+        invul = false;
+    }
+
 
     IEnumerator StunAndKnockback(Vector2 knockback, float duration)
     {
@@ -28,7 +44,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     
     public void TakeDamage(int damage, Vector2 knockback = default)
     {
-        if (isStunned) return;
+        if (isStunned || invul) return;
         
         hp -= damage;
         StartCoroutine(StunAndKnockback(knockback, knockBackDuration));
