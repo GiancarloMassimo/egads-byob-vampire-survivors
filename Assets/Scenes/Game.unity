@@ -477,6 +477,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1854803897}
+  - {fileID: 1638543052}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1325184010
@@ -881,10 +882,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b535559f19f01534fa6b3facd5d753eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  attack: {fileID: 1854803898}
+  primaryAttack:
+    ability: {fileID: 1638543053}
+    cooldown: 0.1
+    lastUsed: 0
+  secondayAttack:
+    ability: {fileID: 1854803898}
+    cooldown: 0.1
+    lastUsed: 0
   damageLayers:
     serializedVersion: 2
     m_Bits: 128
+--- !u!1 &1638543051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638543052}
+  - component: {fileID: 1638543053}
+  m_Layer: 0
+  m_Name: MeleeSwipe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1638543052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638543051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1115508635}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638543053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638543051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679989e555ed20e4a92c82b631f585e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
+  pool:
+  - weight: 1
+    prefab: {fileID: 6935138277788444099, guid: b4578b25b109a55aa80744c525b5fe1d, type: 3}
 --- !u!1 &1854803896
 GameObject:
   m_ObjectHideFlags: 0
