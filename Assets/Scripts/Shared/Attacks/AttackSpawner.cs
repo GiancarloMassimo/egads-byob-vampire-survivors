@@ -14,6 +14,7 @@ public struct AttackPoolItem
 
 public class AttackSpawner : MonoBehaviour
 {
+    public string key;
     [SerializeField] AttackPoolItem[] pool;
 
     readonly List<GameObject> prefabPool = new();

@@ -685,6 +685,8 @@ MonoBehaviour:
   pool:
   - weight: 1
     prefab: {fileID: 4335020595821830025, guid: 6c866509c9b282dd19593f787fcaa9d2, type: 3}
+  - weight: 1
+    prefab: {fileID: 4335020595821830025, guid: 15980d5d7b7099dccbbe8cf3433673b7, type: 3}
   maxEnemies: 100
   enemiesPerWave:
     serializedVersion: 2
@@ -1333,6 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679989e555ed20e4a92c82b631f585e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
+  key: melee
   pool:
   - weight: 1
     prefab: {fileID: 6935138277788444099, guid: b4578b25b109a55aa80744c525b5fe1d, type: 3}
@@ -1380,6 +1383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679989e555ed20e4a92c82b631f585e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpawner
+  key: bullet
   pool:
   - weight: 1
     prefab: {fileID: 4221289746582055652, guid: 39e4c41632c3c2b2cbcde340611de11b, type: 3}
