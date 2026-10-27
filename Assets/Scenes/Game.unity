@@ -685,7 +685,59 @@ MonoBehaviour:
   pool:
   - weight: 1
     prefab: {fileID: 4335020595821830025, guid: 6c866509c9b282dd19593f787fcaa9d2, type: 3}
-  spawnInterval: 2
+  maxEnemies: 100
+  enemiesPerWave:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.1
+      outSlope: 0.1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 3
+      inSlope: 0.1
+      outSlope: 0.1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spawnInterval:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2
+      inSlope: -0.075
+      outSlope: -0.075
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 0.5
+      inSlope: -0.075
+      outSlope: -0.075
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spawnConfiner:
+    minDistFromPlayer: 4
+    min: {x: -7, y: -3}
+    max: {x: 7, y: 3}
 --- !u!114 &702558350
 MonoBehaviour:
   m_ObjectHideFlags: 0

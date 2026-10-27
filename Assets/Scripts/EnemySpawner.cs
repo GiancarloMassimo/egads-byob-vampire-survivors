@@ -12,12 +12,26 @@ public struct EnemyPoolItem
     public GameObject prefab;
 }
 
+[Serializable]
+public struct SpawnConfiner
+{
+    public float minDistFromPlayer;
+    public Vector2 min;
+    public Vector2 max;
+}
+
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] EnemyPoolItem[] pool;
 
-    // TODO: change to animation curves, spawn in waves?
-    [SerializeField] float spawnInterval;
+    int numSpawns = 0;
+
+    [SerializeField] int maxEnemies;
+    [SerializeField] AnimationCurve enemiesPerWave;
+    [SerializeField] AnimationCurve spawnInterval;
+
+    [SerializeField] SpawnConfiner spawnConfiner;
+
     float spawnTimer = 0;
 
     readonly List<GameObject> prefabPool = new();
@@ -27,8 +41,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Awake()
     {
-        Assert.IsTrue(spawnInterval > 0);
-
         foreach (var item in pool)
         {
             for (int i = 0; i < item.weight; i++)
@@ -41,19 +53,40 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         spawnTimer -= Time.deltaTime;
-        if (spawnTimer < 0)
+        if (spawnTimer < 0 && activeEnemies.Count < maxEnemies)
         {
-            SpawnEnemy();
-            spawnTimer = spawnInterval;
+            int enemiesInWave = (int)enemiesPerWave.Evaluate(numSpawns++);
+            spawnTimer = spawnInterval.Evaluate(numSpawns);
+
+            for (int i = 0; i < enemiesInWave; i++) SpawnEnemy();
         }        
     }
 
     void SpawnEnemy()
     {
         var enemy = GetFromPool();
-        enemy.transform.position = Vector2.zero;
+        enemy.transform.position = ChooseSpawnPosition();
         enemy.SetActive(true);
         activeEnemies.Add(enemy);    
+    }
+
+    Vector2 ChooseSpawnPosition()
+    {
+        const int maxTries = 10;
+        int i = 0;
+
+        Vector2 spawnPos = default;
+
+        do {
+            if (++i == maxTries) break;
+
+            spawnPos = new(
+                Random.Range(spawnConfiner.min.x, spawnConfiner.max.x),
+                Random.Range(spawnConfiner.min.y, spawnConfiner.max.y)
+            );
+        } while (Vector2.Distance(GameManager.Instance.Player.position, spawnPos) < spawnConfiner.minDistFromPlayer);
+
+        return spawnPos;
     }
 
     GameObject GetFromPool()
