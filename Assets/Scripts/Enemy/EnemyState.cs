@@ -22,4 +22,6 @@ public abstract class EnemyState
     public abstract void Cleanup();
     public abstract void Execute();
     public abstract void ExecutePhysics();
+    
+    public virtual void OnCollisionEnter2D(Collision2D collision) { }
 }

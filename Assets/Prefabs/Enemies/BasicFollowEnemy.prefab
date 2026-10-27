@@ -170,8 +170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2669271ad7db2d3b146d8706d80717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicFollow
+  chargeDistance: 3
   chaseState:
     rid: 3444643908136730873
+  chargeState:
+    rid: 3444644114759417930
   references:
     version: 2
     RefIds:
@@ -180,6 +183,14 @@ MonoBehaviour:
       data:
         speed: 3
         stopDistance: 1
+    - rid: 3444644114759417930
+      type: {class: ChargeAttackState, ns: , asm: Assembly-CSharp}
+      data:
+        chargeSpeed: 12
+        waitDuration: 0.5
+        chargeDuration: 0.2
+        chargeDamage: 50
+        knockbackForce: 20
 --- !u!114 &963191614790088937
 MonoBehaviour:
   m_ObjectHideFlags: 0

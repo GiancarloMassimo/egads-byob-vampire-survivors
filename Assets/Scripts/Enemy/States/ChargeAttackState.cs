@@ -1,11 +1,16 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public class ChargeAttackState : EnemyState
 {
     enum ChargeState {Waiting, Charging}
     [SerializeField] float chargeSpeed;
     [SerializeField] float waitDuration;
     [SerializeField] float chargeDuration;
+    [SerializeField] int chargeDamage;
+    [SerializeField] float knockbackForce;
+
     Transform target;
     Transform self;
     Rigidbody2D rb;
@@ -28,7 +33,6 @@ public class ChargeAttackState : EnemyState
         rb.linearVelocity = Vector2.zero;
 
         chargeDirection = (target.position - self.position).normalized;
-
     }
 
     public override void Cleanup()
@@ -70,7 +74,15 @@ public class ChargeAttackState : EnemyState
                 RaiseExit();
                 break;
         }
-
     }
 
+    public override void OnCollisionEnter2D(Collision2D collision)
+    {
+        base.OnCollisionEnter2D(collision);
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(chargeDamage, rb.linearVelocity.normalized * knockbackForce);
+        } 
+    }
 }

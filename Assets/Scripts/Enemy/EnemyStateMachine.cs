@@ -156,6 +156,11 @@ public abstract class EnemyStateMachine : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        currentState.OnCollisionEnter2D(collision);
+    }
+
     protected virtual void OnGetFromPool() {}
     protected virtual void OnReturnToPool() {}
     protected abstract EnemyState BuildTransitions();
