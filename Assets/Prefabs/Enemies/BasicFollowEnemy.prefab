@@ -183,6 +183,7 @@ MonoBehaviour:
       data:
         speed: 3
         stopDistance: 1
+        acceleration: 0
     - rid: 3444644114759417930
       type: {class: ChargeAttackState, ns: , asm: Assembly-CSharp}
       data:

@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 11
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7438242413743671978, guid: edd418bd57ec621659a70bbad9c3b9fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37febdc91e50dcaccb02149b70d39fc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,8 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b493fb54bbe59e5cb415084d26d58e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slash
-  damage: 15
-  knockbackForce: 4
-  duration: 0.05
-  distanceFromOrigin: 0.75
-  radius: 0.5
+  damage: 0
+  knockbackForce: 20
+  duration: 0.1
+  distanceFromOrigin: 1.5
+  radius: 1.5
+  mode: 1
+  feedbackSound: {fileID: 8300000, guid: 74ed082b54f516fb587558c6277eb41d, type: 3}

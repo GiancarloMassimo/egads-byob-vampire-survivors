@@ -9,6 +9,7 @@ public class SpawnAttackState : EnemyState
     AttackSpawner attack;
     [SerializeField] int maxAttacks;
     [SerializeField] float attackInterval;
+    [SerializeField] AudioClip meow;
 
     Transform target;
     Transform self;    
@@ -36,6 +37,7 @@ public class SpawnAttackState : EnemyState
 
         if (attackTimer < 0)
         {
+            if (meow != null) AudioManager.instance.PlaySound(meow, 0.3f);
             Attack();
 
             attackTimer = attackInterval;

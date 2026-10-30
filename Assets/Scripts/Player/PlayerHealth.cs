@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     [SerializeField] Slider healthBarSlider;
 
+    [SerializeField] AudioClip[] hurtSounds;
+
     bool isStunned;
 
     PlayerMovement playerMovement;
@@ -29,6 +31,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void TakeDamage(int damage, Vector2 knockback = default)
     {
         if (isStunned) return;
+
+        AudioManager.instance.PlayRandomSound(hurtSounds, 0.5f);
         
         hp -= damage;
         StartCoroutine(StunAndKnockback(knockback, knockBackDuration));

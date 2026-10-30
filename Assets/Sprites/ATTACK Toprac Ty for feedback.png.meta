@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 37febdc91e50dcaccb02149b70d39fc8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5353953132068497062
+    second: ATTACK Toprac Ty for feedback_0
+  - first:
+      213: -1597956068547268731
+    second: ATTACK Toprac Ty for feedback_1
+  - first:
+      213: 4262065295370456734
+    second: ATTACK Toprac Ty for feedback_2
+  - first:
+      213: 8389874260773684280
+    second: ATTACK Toprac Ty for feedback_3
+  - first:
+      213: 1735221351991007946
+    second: ATTACK Toprac Ty for feedback_4
+  - first:
+      213: -2945865526451172702
+    second: ATTACK Toprac Ty for feedback_5
+  - first:
+      213: 3498108307488902154
+    second: ATTACK Toprac Ty for feedback_6
+  - first:
+      213: 1627250129811861213
+    second: ATTACK Toprac Ty for feedback_7
+  - first:
+      213: 3756199108232285011
+    second: ATTACK Toprac Ty for feedback_8
+  - first:
+      213: -4065170204115478530
+    second: ATTACK Toprac Ty for feedback_9
+  - first:
+      213: -6930466070522301628
+    second: ATTACK Toprac Ty for feedback_10
+  - first:
+      213: 4800477041529309829
+    second: ATTACK Toprac Ty for feedback_11
+  - first:
+      213: -77195258942402941
+    second: ATTACK Toprac Ty for feedback_12
+  - first:
+      213: -8342849364062922854
+    second: ATTACK Toprac Ty for feedback_13
+  - first:
+      213: -316452831680939147
+    second: ATTACK Toprac Ty for feedback_14
+  - first:
+      213: -7718073379887980656
+    second: ATTACK Toprac Ty for feedback_15
+  - first:
+      213: -7581128816449949151
+    second: ATTACK Toprac Ty for feedback_16
+  - first:
+      213: 1315350775021917472
+    second: ATTACK Toprac Ty for feedback_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 109
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a66805d1001d4a40800000000000000
+      internalID: 5353953132068497062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 107
+        width: 90
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f6f870c6be2d9e0800000000000000
+      internalID: -1597956068547268731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 103
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e83140ec5e52b30800000000000000
+      internalID: 4262065295370456734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_3
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 102
+        width: 17
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834cb9f4032de6470800000000000000
+      internalID: 8389874260773684280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_4
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 120
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acad81440aeb41810800000000000000
+      internalID: 1735221351991007946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_5
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 123
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa0fcb59ee2e17d0800000000000000
+      internalID: -2945865526451172702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 23
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c08bdc8f6cb8030800000000000000
+      internalID: 3498108307488902154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_7
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 93
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddee42c1f57259610800000000000000
+      internalID: 1627250129811861213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_8
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 73
+        width: 33
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b03df0033b02430800000000000000
+      internalID: 3756199108232285011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_9
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 81
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef7d130dc3d9597c0800000000000000
+      internalID: -4065170204115478530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_10
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 85
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443fe9af3d902df90800000000000000
+      internalID: -6930466070522301628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 92
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ac5cc6f68be9240800000000000000
+      internalID: 4800477041529309829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_12
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 39
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38ec46c225fbdeef0800000000000000
+      internalID: -77195258942402941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_13
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 40
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a979f68a4be383c80800000000000000
+      internalID: -8342849364062922854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 37
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57bbd7383dbbb9bf0800000000000000
+      internalID: -316452831680939147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 36
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09fd0613725e3e490800000000000000
+      internalID: -7718073379887980656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_16
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 32
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122f50b028b6ac690800000000000000
+      internalID: -7581128816449949151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ATTACK Toprac Ty for feedback_17
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 8
+        width: 100
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02557349f80114210800000000000000
+      internalID: 1315350775021917472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ATTACK Toprac Ty for feedback_0: 5353953132068497062
+      ATTACK Toprac Ty for feedback_1: -1597956068547268731
+      ATTACK Toprac Ty for feedback_10: -6930466070522301628
+      ATTACK Toprac Ty for feedback_11: 4800477041529309829
+      ATTACK Toprac Ty for feedback_12: -77195258942402941
+      ATTACK Toprac Ty for feedback_13: -8342849364062922854
+      ATTACK Toprac Ty for feedback_14: -316452831680939147
+      ATTACK Toprac Ty for feedback_15: -7718073379887980656
+      ATTACK Toprac Ty for feedback_16: -7581128816449949151
+      ATTACK Toprac Ty for feedback_17: 1315350775021917472
+      ATTACK Toprac Ty for feedback_2: 4262065295370456734
+      ATTACK Toprac Ty for feedback_3: 8389874260773684280
+      ATTACK Toprac Ty for feedback_4: 1735221351991007946
+      ATTACK Toprac Ty for feedback_5: -2945865526451172702
+      ATTACK Toprac Ty for feedback_6: 3498108307488902154
+      ATTACK Toprac Ty for feedback_7: 1627250129811861213
+      ATTACK Toprac Ty for feedback_8: 3756199108232285011
+      ATTACK Toprac Ty for feedback_9: -4065170204115478530
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
