@@ -6,6 +6,8 @@ public class ChaseState : EnemyState
 {
     [SerializeField] float speed;
     [SerializeField] float stopDistance;
+    [SerializeField] float acceleration;
+    float actualSpeed;
 
     Transform target;
     Transform self;
@@ -16,12 +18,14 @@ public class ChaseState : EnemyState
         target = GameManager.Instance.Player;
         self = enemy.transform;
         rb = enemy.GetComponent<Rigidbody2D>();
+        actualSpeed = speed;
     }   
 
     public override void Setup() {}
 
     public override void Cleanup()
     {
+        actualSpeed = speed;
         rb.linearVelocity = Vector2.zero;
     }
     
@@ -29,6 +33,10 @@ public class ChaseState : EnemyState
 
     public override void ExecutePhysics()
     {
-        rb.linearVelocity = (target.position - self.position).normalized * speed;
+        if (actualSpeed < 100) {
+            actualSpeed += Time.fixedDeltaTime * acceleration;
+        } 
+
+        rb.linearVelocity = (target.position - self.position).normalized * actualSpeed;
     }
 }
